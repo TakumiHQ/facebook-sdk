@@ -308,7 +308,7 @@ class GraphAPI(object):
             else:
                 raise GraphAPIError(response.json())
         else:
-            raise GraphAPIError(f"Maintype was not text, image, or querystring (response.status_code = {response.status_code}, response.text = f{response.text}, response.headers = {response.headers})")
+            raise GraphAPIError(f"Maintype was not text, image, or querystring (response.status_code = {response.status_code}, response.text = {response.text}, response.headers = {response.headers})")
 
         if result and isinstance(result, dict) and result.get("error"):
             raise GraphAPIError(result)
